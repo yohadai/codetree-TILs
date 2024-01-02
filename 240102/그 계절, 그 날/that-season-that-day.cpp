@@ -11,7 +11,7 @@
 const int days[13]{0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 const std::string season[13]{"?", "Winter","Winter","Spring","Spring","Spring"
                 ,"Summer","Summer","Summer","Fall","Fall","Fall"
-                "Winter"};
+                ,"Winter"};
 
 std::string printSeason(int year, int month, int day){
     int lastDay{days[month]};

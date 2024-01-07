@@ -27,7 +27,7 @@ int main() {
     
     for (int i{}; i < 7; ++i){
         if (dayOfWeek[i] == day){
-            if (i <= elapsedDays%7){
+            if (i < elapsedDays%7){
                 passedTime += 1;
             }
             break;

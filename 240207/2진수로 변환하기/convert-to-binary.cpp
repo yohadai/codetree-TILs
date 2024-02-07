@@ -6,6 +6,8 @@ int main() {
     int digits[20]{};
     int cnt{0};
     
+    std::cin >> n;
+
     while (true){
         if (n < 2){
             digits[cnt++] = n;

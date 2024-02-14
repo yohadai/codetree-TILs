@@ -13,7 +13,7 @@ int main() {
         }
     }
     int maxBricksAmount{};
-    for (int i{}; i < 100; ++i) {
+    for (int i{100}; i < 200; ++i) {
         if (maxBricksAmount < bricks[i]) {
             maxBricksAmount = bricks[i];
         }

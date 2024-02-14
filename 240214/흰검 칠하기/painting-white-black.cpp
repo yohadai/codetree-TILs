@@ -1,7 +1,10 @@
 #include <iostream>
 
+
 int main() {
 	int n{}; char area[200'000]{}; 
+	short areaWhite[200'000]{}; // 하얀 색 칠한 횟수
+	short areaBlack[200'000]{}; // 검은거
 	int range{}; int currentIndex{100'000};
 	char direction{};
 
@@ -14,30 +17,34 @@ int main() {
 				if (area[currentIndex] == 'G') {
 					// do nothing
 				}
-				else if (area[currentIndex] == '\0' || area[currentIndex] == 'W') {
+				else {
 					area[currentIndex] = 'B';
+					areaBlack[currentIndex]++;
+					if (areaWhite[currentIndex] >= 2 && areaBlack[currentIndex] >= 2) {
+						area[currentIndex] = 'G';
+					}
 				}
-				else if (area[currentIndex] == 'B') {
-					area[currentIndex] = 'G';
-				}
+
 				currentIndex++;
 			}
-			currentIndex--; //	칠하는 건 7번 칠하지만 움직이는 건 6번 움직인다. 원래 자리도 포함해서 range 번 칠하니까.
+			currentIndex--; 
 		}
 		else if (direction == 'L') {
 			for (int i{ 0 }; i < range; ++i) {
 				if (area[currentIndex] == 'G') {
 					// do nothing
 				}
-				else if (area[currentIndex] == '\0' || area[currentIndex] == 'B') {
+				else {
 					area[currentIndex] = 'W';
+					areaWhite[currentIndex]++;
+					if (areaWhite[currentIndex] >= 2 && areaBlack[currentIndex] >= 2) {
+						area[currentIndex] = 'G';
+					}
 				}
-				else if (area[currentIndex] == 'W') {
-					area[currentIndex] = 'G';
-				}
+
 				currentIndex--;
 			}
-			currentIndex++; //	
+			currentIndex++; 
 		}
 	}
 

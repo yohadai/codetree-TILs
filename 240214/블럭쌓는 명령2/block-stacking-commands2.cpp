@@ -5,7 +5,7 @@ int main() {
     int k{};
     int a{}, b{};
     int bricks[100]{};
-    std::cin.ignore(); // n은 필요 없을 듯
+    std::cin >> k;
     std::cin >> k;
     for (int i{}; i < k; ++i){
         std::cin >> a >> b;

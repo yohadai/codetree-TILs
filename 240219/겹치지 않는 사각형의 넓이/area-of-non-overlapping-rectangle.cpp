@@ -1,7 +1,7 @@
 #include <iostream>	
 
 int main() {
-	bool coordinate[201][201]{};
+	bool coordinate[2001][2001]{};
 
 	/*int n{};
 	std::cin >> n;*/
@@ -13,7 +13,7 @@ int main() {
 		std::cin >> x1[i] >> y1[i] >> x2[i] >> y2[i];
 		for (int x{ x1[i]}; x < x2[i]; ++x) {
 			for (int y{ y1[i]}; y < y2[i]; ++y) {
-				coordinate[x + 100][y + 100] = true;
+				coordinate[x + 1000][y + 1000] = true;
 			}
 		}
 	}

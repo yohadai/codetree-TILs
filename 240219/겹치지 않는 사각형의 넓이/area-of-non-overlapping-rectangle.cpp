@@ -21,13 +21,13 @@ int main() {
 	std::cin >> x1[2] >> y1[2] >> x2[2] >> y2[2];
 	for (int x{ x1[2] }; x < x2[2]; ++x) {
 		for (int y{ y1[2] }; y < y2[2]; ++y) {
-			coordinate[x + 100][y + 100] = false;
+			coordinate[x + 1000][y + 1000] = false;
 		}
 	}
 
 	int counter{};
-	for (int x{ 0 }; x < 201; ++x) {
-		for (int y{ 0 }; y < 201; ++y) {
+	for (int x{ 0 }; x < 2001; ++x) {
+		for (int y{ 0 }; y < 2001; ++y) {
 			if (coordinate[x][y] == true) {
 				counter++;
 			}

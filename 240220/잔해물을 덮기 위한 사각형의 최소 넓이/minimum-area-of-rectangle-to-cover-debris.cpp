@@ -27,6 +27,28 @@ int main() {
         }
     }
 
+    bool xTop{}, xBotom{}, yTop{}, yBotom{};
+    for (int i{x1[0]}; i < x2[0]; ++i){
+        if (coordinate[i + OFFSET][y1[0] + OFFSET] == 1){
+            yBotom = true;
+        }
+        if (coordinate[i + OFFSET][y2[0] + OFFSET - 1] == 1){
+            yTop = true;
+        }
+    }
+    for (int i{y1[0]}; i < y2[0]; ++i){
+        if (coordinate[i + OFFSET][x1[0] + OFFSET] == 1){
+            xBotom = true;
+        }
+        if (coordinate[i + OFFSET][x2[0] + OFFSET - 1] == 1){
+            xTop = true;
+        }
+    }
+    if (xTop && xBotom && yTop && yBotom){
+        std::cout << (x2[0] - x1[0]) * (y2[0] - y1[0]);
+        return 0;
+    }
+
     int maxWidth{}, maxHeight{};
     int tmpWidth{}, tmpHeight{};
 

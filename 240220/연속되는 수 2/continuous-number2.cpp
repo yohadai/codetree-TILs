@@ -12,6 +12,8 @@ int main() {
     for (int i{}; i < n; ++i){
         if (i == 0 || numbers[i] == numbers[i-1])
             ++counter;
+            if (maxCount < counter)
+                maxCount = counter;
         else {
             if (maxCount < counter)
                 maxCount = counter;

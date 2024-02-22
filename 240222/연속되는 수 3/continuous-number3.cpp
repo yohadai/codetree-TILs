@@ -19,9 +19,9 @@ int main() {
     }
 
     int maxLength{1};
-    int length{};
+    int length{1};
     for (int i{1}; i < n; ++i){
-        if (isSameSign(numbers[i - 1], numbers[i])){
+        if (isSameSign(numbers[i - 1], numbers[i])) {
             length++;
             if (length > maxLength){
                 maxLength = length;

@@ -24,7 +24,7 @@ int main() {
         }
     } 
 
-    int cnt{1};
+    int cnt{1}; bool flag{};
     for (int i{}; i < SIZE; ++i) {
         if (aLocation[i] == bLocation[i]) {
             break;
@@ -32,8 +32,12 @@ int main() {
         else{
             ++cnt;
         }
+
+        if (i >= n && i >= m){
+            flag = true;
+        }
     }
 
-    std::cout << cnt;
+    std::cout << (flag ? -1 : cnt) << std::endl;
     return 0;
 }

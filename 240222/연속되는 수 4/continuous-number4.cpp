@@ -24,7 +24,7 @@ int main() {
             length = 1;
         }
 
-        if (maxLength < length){
+        if (maxLength <= length){
                 maxLength = length;
         }
     }

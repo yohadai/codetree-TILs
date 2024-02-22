@@ -4,12 +4,13 @@
 int main() {
 
     int n{}, m{};
-    int aLocation[SIZE]{}, bLocation[SIZE]{}; int curLocation{}, curIndex{}, time{}; char dir{};
+    int aLocation[SIZE]{}, aMovedTime{1}, bMovedTime{1}, bLocation[SIZE]{}; int curLocation{}, curIndex{}, time{}; char dir{};
 
     std::cin >> n >> m;
 
     for (int i{}; i < n; ++i) {
         std::cin >> dir >> time;
+        aMovedTime *= time;
         for (int t{}; t < time; ++t){
             aLocation[curIndex++] = (dir == 'R'? ++curLocation : --curLocation);
         }
@@ -19,6 +20,7 @@ int main() {
 
     for (int i{}; i < m; ++i) {
         std::cin >> dir >> time;
+        bMovedTime *= time;
         for (int t{}; t < time; ++t){
             bLocation[curIndex++] = (dir == 'R'? ++curLocation : --curLocation);
         }
@@ -29,11 +31,11 @@ int main() {
         if (aLocation[i] == bLocation[i]) {
             break;
         }
-        else{
+        else {
             ++cnt;
         }
 
-        if (i >= n && i >= m){
+        if (i >= aMovedTime && i >= bMovedTime){
             flag = true;
         }
     }

@@ -4,13 +4,13 @@
 int main() {
 
     int n{}, m{};
-    int aLocation[SIZE]{}, aMovedTime{1}, bMovedTime{1}, bLocation[SIZE]{}; int curLocation{}, curIndex{}, time{}; char dir{};
+    int aLocation[SIZE]{}, aMovedTime{}, bMovedTime{}, bLocation[SIZE]{}; int curLocation{}, curIndex{}, time{}; char dir{};
 
     std::cin >> n >> m;
 
     for (int i{}; i < n; ++i) {
         std::cin >> dir >> time;
-        aMovedTime *= time;
+        aMovedTime += time;
         for (int t{}; t < time; ++t){
             aLocation[curIndex++] = (dir == 'R'? ++curLocation : --curLocation);
         }
@@ -20,7 +20,7 @@ int main() {
 
     for (int i{}; i < m; ++i) {
         std::cin >> dir >> time;
-        bMovedTime *= time;
+        bMovedTime += time;
         for (int t{}; t < time; ++t){
             bLocation[curIndex++] = (dir == 'R'? ++curLocation : --curLocation);
         }
@@ -28,16 +28,18 @@ int main() {
 
     int cnt{1}; bool flag{};
     for (int i{}; i < SIZE; ++i) {
+        // if (i > aMovedTime && i > bMovedTime){
+        //     flag = true;
+        // }
         if (aLocation[i] == bLocation[i]) {
+            if (aLocation[i] == 0 ){
+                flag = true;
+            }
             break;
         }
         else {
             ++cnt;
-        }
-
-        if (i >= aMovedTime && i >= bMovedTime){
-            flag = true;
-        }
+        }       
     }
 
     std::cout << (flag ? -1 : cnt) << std::endl;

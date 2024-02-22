@@ -14,6 +14,7 @@ int main() {
         std::cin >> sequence[i];
         if (i == 0){
             length++;
+            maxLength++;
             continue;
         }
         if (sequence[i - 1] < sequence[i]) {

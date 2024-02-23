@@ -17,7 +17,7 @@ int main() {
     }
 
     index = 1;
-    for (int i{};i < n; ++i) {
+    for (int i{};i < m; ++i) {
         std::cin >> v >> t;
         for (int j{}; j < t; ++j){
             bLocation[index] = bLocation[index - 1] + v;
@@ -47,6 +47,7 @@ int main() {
             }
         }
     }
+
 
     
     std::cout << counter << std::endl;

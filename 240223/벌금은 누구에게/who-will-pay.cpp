@@ -12,6 +12,7 @@ int main() {
         studWarning[studNum]++;
         if (studWarning[studNum] == k){
             counter = studNum;
+            break;
         }
     }
 

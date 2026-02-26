@@ -1,20 +1,24 @@
+import sys
+MAX_INT = sys.maxsize
+
 n = int(input())
 arr = list(map(int, input().split()))
 
-def diff(arr):
+def diff(arr, delete):
     total = 0
-    for i in range(len(arr) - 1):
-        total += abs(arr[i] - arr[i+1])
+    prev = None
+    for i in range(n):
+        if i == delete: continue
+        if prev:
+            total += abs(prev - arr[i])
+        prev = arr[i]
     return total
 
-# Please write your code here.
-ans = 100000000000
-
+ans = MAX_INT
 for double in range(n):
+    arr[double] *= 2
     for delete in range(n):
-        cur = arr[:]
-        cur[double] *= 2
-        cur.pop(delete)
-        ans = min(ans, diff(cur))
+        ans = min(ans, diff(arr, delete))
+    arr[double] //=2
 
 print(ans)

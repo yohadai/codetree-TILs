@@ -3,7 +3,7 @@ arr = [int(input()) for _ in range(N)]
 
 # Please write your code here.
 ans = 0
-for i in range(1, N-K):
+for i in list(set(arr)):
     cnt = 0
     for j in range(N):
         if i <= arr[j] and arr[j] <= i+K: cnt += 1

@@ -1,16 +1,21 @@
 import sys
-N, K = map(int, input().split())
+n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 
-# Please write your code here.
-ans = 0
-for min in range(1, 100+1):
-    for move in range(N-K):
-        flag = False
-        for check in arr[move:move+K]:
-            if check in range(min, 100+1):
-                flag = True
+def is_possible(max_value):
+    for i in range(n-k):
+        possible = False
+        for j in range(i, i+k):
+            if arr[j] <= max_value: 
+                possible = True
                 break
-        if not flag:
-            print(min)
-            sys.exit()
+        if not possible: return False
+        else: continue
+    return True
+
+ans = sorted(arr, reverse=True)
+
+for i in range(n):
+    if not is_possible(ans[i]):
+        print(ans[i-1])
+        break

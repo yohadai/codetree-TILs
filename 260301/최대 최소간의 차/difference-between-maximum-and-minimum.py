@@ -5,7 +5,7 @@ arr = list(map(int, input().split()))
 # Please write your code here.
 # if not num in range(n, n+k): total += min(abs(num-n), abs(num-n-k))
 ans = sys.maxsize
-for num in range(1, 101):
+for num in range(1, 10001):
     cost = 0
     for i in range(n):
         if not num <= arr[i] <= num+k:

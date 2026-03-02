@@ -1,3 +1,4 @@
+import sys
 nums = list(map(int, input().split()))
 nums.sort()
 # Please write your code here.
@@ -19,4 +20,4 @@ for A in range(40):
                     ]
                 if is_same_list(arr): 
                     print(A, B,C, D)
-                    break
+                    sys.exit()

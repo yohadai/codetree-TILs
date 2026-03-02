@@ -7,7 +7,7 @@ def is_possible(num):
     arr = list()
     arr.append(num)
     for i in range(n-1):
-        if abs(adjacent[i] - arr[-1]) in arr:
+        if adjacent[i] == arr[-1] or abs(adjacent[i] - arr[-1]) in arr:
             return False
         arr.append(abs(adjacent[i] - arr[-1]))
     for ans in arr:

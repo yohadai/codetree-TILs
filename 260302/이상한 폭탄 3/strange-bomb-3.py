@@ -12,9 +12,9 @@ bomb = [0] * 1000000
 for i in range(N):
     if explose[i] == True:
         bomb[num[i]] += 1
-num = list(set(num))
+num = list(reversed(list(set(num))))
 ans = 0
-for i in range(1, len(num)):
+for i in range(len(num)):
     if bomb[num[i]] > bomb[ans]:
         ans = num[i]
 print(ans)

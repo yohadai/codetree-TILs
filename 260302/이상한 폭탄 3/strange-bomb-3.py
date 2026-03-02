@@ -13,7 +13,7 @@ for i in range(N):
     if explose[i] == True:
         bomb[num[i]] += 1
 num = list(set(num))
-ans = num[0]
+ans = 0
 for i in range(1, len(num)):
     if bomb[num[i]] > bomb[ans]:
         ans = num[i]

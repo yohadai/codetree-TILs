@@ -14,7 +14,7 @@ def is_possible(H):
     return H_cnt >= H or H_cnt + min(H_minus_1_cnt, l) >= H
 
 ans = -1
-for num in nums:
+for num in range(120):
     if is_possible(num): ans = max(ans, num)
 
 print(ans)

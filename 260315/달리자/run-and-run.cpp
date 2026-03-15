@@ -15,22 +15,15 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> B[i];
     }
+    int ans = 0;
     for (int i = 0; i < n; ++i) {
-        diff[i] = A[i] - B[i];
-    }
-    int total = 0;
-    for (int i = 0; i < n-1; ++i) {
-        if (diff[i] <= 0) continue;
-        for (int j = i+1; j < n; ++j) {
-            if (diff[j] < 0) {
-                total += diff[i] * (j - i);
-                diff[j] += diff[i];
-                diff[i] = 0;
-                break;
-            }
+        if (A[i] > B[i]) {
+            int diff = A[i] - B[i];
+            A[i+1] += diff;
+            ans += diff;
         }
     }
     // Please write your code here.
-    cout << total;
+    cout << ans;
     return 0;
 }

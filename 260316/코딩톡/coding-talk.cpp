@@ -12,11 +12,14 @@ int main() {
     for (int i = 0; i < m; i++) {
         cin >> c[i] >> u[i];
     }
+    if (u[p-1] == 0) {
+        return 0;
+    }
     set<char> s{};
     for (int i = p-1; i < m; ++i) { // p는 1부터 시작.
         s.insert(c[i]);
     }
-    for (int i = 'A'; i < 65 + n; ++i) {
+    for (int i = 'A'; i < 'A' + n; ++i) {
         if (!s.contains(i)) {
             cout << char(i) << " ";
         }
